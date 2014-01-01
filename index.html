@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script	type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript">
+		var socket = io.connect();
+		socket.on('message', function(obj){
+			
+			document.getElementById('TimeElement').innerHTML = obj.time;
+
+			document.getElementById('Connections').innerHTML = obj.connections;
+		});
+
+		
+	</script>
+	<title>Site</title>
+</head>
+<body>
+<h1>Site</h1>
+<p>Server Time: <span id="TimeElement"></span></p>
+<p>Number of current connections: <span id="Connections"></span></p>
+
+</body>
+</html>
